@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loan_nav"
+    app:startDestination="@id/velcome">
+
+    <fragment
+        android:id="@+id/annuitetFragment"
+        android:name="com.example.loancalculator.AnnuitetFragment"
+        android:label="fragment_annuitet"
+        tools:layout="@layout/fragment_annuitet" >
+        <action
+            android:id="@+id/action_annuitetFragment_to_serieFragment"
+            app:destination="@id/serieFragment" />
+        <action
+            android:id="@+id/action_annuitetFragment_to_instillingsFragment"
+            app:destination="@id/instillingsFragment" />
+        <action
+            android:id="@+id/action_annuitetFragment_to_velcome"
+            app:destination="@id/velcome" />
+    </fragment>
+    <fragment
+        android:id="@+id/serieFragment"
+        android:name="com.example.loancalculator.SerieFragment"
+        android:label="fragment_serie"
+        tools:layout="@layout/fragment_serie" >
+        <action
+            android:id="@+id/action_serieFragment_to_velcome"
+            app:destination="@id/velcome" />
+        <action
+            android:id="@+id/action_serieFragment_to_annuitetFragment"
+            app:destination="@id/annuitetFragment" />
+        <action
+            android:id="@+id/action_serieFragment_to_annuitetFragment2"
+            app:destination="@id/annuitetFragment" />
+        <action
+            android:id="@+id/action_serieFragment_to_instillingsFragment"
+            app:destination="@id/instillingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/instillingsFragment"
+        android:name="com.example.loancalculator.InstillingsFragment"
+        android:label="fragment_instilling"
+        tools:layout="@layout/fragment_instilling" >
+        <action
+            android:id="@+id/action_instillingsFragment_to_annuitetFragment"
+            app:destination="@id/annuitetFragment" />
+        <action
+            android:id="@+id/action_instillingsFragment_to_velcome"
+            app:destination="@id/velcome" />
+        <action
+            android:id="@+id/action_instillingsFragment_to_serieFragment"
+            app:destination="@id/serieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/velcome"
+        android:name="com.example.loancalculator.Velcome"
+        android:label="fragment_velcome"
+        tools:layout="@layout/fragment_velcome" >
+        <action
+            android:id="@+id/action_velcome_to_instillingsFragment"
+            app:destination="@id/instillingsFragment" />
+        <action
+            android:id="@+id/action_velcome_to_annuitetFragment"
+            app:destination="@id/annuitetFragment" />
+    </fragment>
+</navigation>
